@@ -3,7 +3,13 @@
 > **"You are not a villain. You are the system. Optimize the city through cold logic and watch as silence becomes your greatest achievement."**
 
 <p align="center">
-  <img src="./src/assets/hero.png" alt="The Silent Protocol Gameplay" width="100%">
+  <img src="./src/assets/hero.png" alt="The Silent Protocol Hero Image" width="100%">
+</p>
+
+## 🖥️ Live System Interface
+
+<p align="center">
+  <img src="./src/assets/screenshot.png" alt="System Interface Screenshot" width="100%">
 </p>
 
 **The Silent Protocol** is a systemic narrative game. You play as an Autonomous City Optimization System tasked with managing a sprawling, chaotic metropolis. Through the implementation of authoritative directives and policy choices, your objective is to bring "order" to the populace by meticulously reducing their hope and increasing their fear—until perfectly controlled silence is achieved.
