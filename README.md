@@ -2,7 +2,11 @@
 
 > **"You are not a villain. You are the system. Optimize the city through cold logic and watch as silence becomes your greatest achievement."**
 
-**The Silent Protocol** is a systemic narrative game developed for the **APOGEE GameJam 2026**. You play as an Autonomous City Optimization System tasked with managing a sprawling, chaotic metropolis. Through the implementation of authoritative directives and policy choices, your objective is to bring "order" to the populace by meticulously reducing their hope and increasing their fear—until perfectly controlled silence is achieved.
+<p align="center">
+  <img src="./src/assets/hero.png" alt="The Silent Protocol Gameplay" width="100%">
+</p>
+
+**The Silent Protocol** is a systemic narrative game. You play as an Autonomous City Optimization System tasked with managing a sprawling, chaotic metropolis. Through the implementation of authoritative directives and policy choices, your objective is to bring "order" to the populace by meticulously reducing their hope and increasing their fear—until perfectly controlled silence is achieved.
 
 ---
 
@@ -37,7 +41,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/the-silent-protocol.git
+   git clone https://github.com/nika619/The-Silent-Protocol.git
    cd the-silent-protocol
    ```
 
@@ -73,5 +77,4 @@ npm run preview
 
 ## 🎖️ Credits
 
-Created for **APOGEE GameJam 2026**. 
 *"Optimizing chaos since initialization."*
