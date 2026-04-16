@@ -1,0 +1,243 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Dashboard Panel Styles — System metrics, vitality EKG, cycle info
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Dashboard Header ─────────────────────────────────────────── */
+.dashboard-header {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: var(--border-panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+}
+
+.dashboard-header .protocol-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-system-cyan);
+  text-shadow: 0 0 8px rgba(0, 255, 213, 0.4);
+}
+
+.dashboard-header .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-system-cyan);
+  box-shadow: 0 0 8px var(--color-system-cyan);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ─── Vitality EKG ─────────────────────────────────────────────── */
+.vitality-section {
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: var(--border-panel);
+}
+
+.vitality-label {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: var(--space-xxs);
+}
+
+.vitality-canvas {
+  width: 100%;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Metrics Section ──────────────────────────────────────────── */
+.metrics-section {
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-bottom: var(--border-panel);
+}
+
+.metric-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metric-name {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+}
+
+.metric-name .icon {
+  font-size: var(--fs-sm);
+  opacity: 0.7;
+}
+
+.metric-value {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+}
+
+.metric-bar-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.metric-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width var(--transition-slow), background-color var(--transition-slow);
+  position: relative;
+}
+
+.metric-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: inherit;
+  filter: brightness(1.5);
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.metric-bar-preview {
+  position: absolute;
+  top: 0;
+  right: 0; 
+  /* We align preview to right edge of where the "projected" width is 
+     handled in JS by setting width to delta, absolute pos. 
+     Wait, easier to just make it an absolute overlay starting at left=0 and set width. */
+  left: 0;
+  height: 100%;
+  border-radius: 2px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4) 4px,
+    rgba(255, 255, 255, 0.1) 4px,
+    rgba(255, 255, 255, 0.1) 8px
+  );
+  opacity: 0;
+  transition: opacity var(--transition-fast), width var(--transition-base), background-color var(--transition-base);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.metric-bar-preview.show {
+  opacity: 1;
+}
+
+.metric-delta {
+  font-size: var(--fs-xs);
+  font-family: var(--font-mono);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.metric-delta.positive { color: var(--color-metric-hope); }
+.metric-delta.negative { color: var(--color-metric-disorder); }
+.metric-delta.preview { color: var(--color-system-cyan); filter: drop-shadow(0 0 4px rgba(0, 255, 213, 0.5)); }
+.metric-delta.show { opacity: 1; }
+
+.metric-value.preview {
+  color: var(--color-system-cyan);
+  text-shadow: 0 0 6px rgba(0, 255, 213, 0.3);
+}
+
+/* ─── Cycle Indicator ──────────────────────────────────────────── */
+.cycle-section {
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: var(--border-panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cycle-label {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cycle-value {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--color-system-cyan);
+  font-family: var(--font-mono);
+}
+
+.cycle-progress-bar {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  margin-top: var(--space-xxs);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.cycle-progress-fill {
+  height: 100%;
+  background: var(--color-system-cyan);
+  border-radius: 1px;
+  transition: width var(--transition-base);
+  box-shadow: 0 0 6px var(--color-system-cyan);
+}
+
+/* ─── Phase Indicator ──────────────────────────────────────────── */
+.phase-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-secondary);
+}
+
+.phase-badge.early {
+  border-color: rgba(255, 167, 38, 0.3);
+  color: var(--color-accent-warm);
+}
+
+.phase-badge.mid {
+  border-color: rgba(120, 144, 156, 0.3);
+  color: #78909c;
+}
+
+.phase-badge.late {
+  border-color: rgba(0, 255, 213, 0.3);
+  color: var(--color-system-cyan);
+}

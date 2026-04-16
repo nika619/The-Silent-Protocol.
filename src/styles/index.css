@@ -1,0 +1,263 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * THE SILENT PROTOCOL — Root Design System & Tokens
+ * Protocol-OS aesthetic: surveillance command center, glassmorphism
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Fonts ────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ─── CSS Custom Properties (Design Tokens) ────────────────────── */
+:root {
+  /* Colors */
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #0f0f18;
+  --color-bg-panel: rgba(15, 15, 25, 0.75);
+  --color-bg-card: rgba(20, 20, 35, 0.60);
+  --color-bg-card-hover: rgba(25, 25, 45, 0.80);
+
+  --color-system-cyan: #00ffd5;
+  --color-system-cyan-dim: #006b59;
+  --color-system-cyan-glow: rgba(0, 255, 213, 0.15);
+  --color-redacted: #ff2040;
+  --color-redacted-dim: rgba(255, 32, 64, 0.2);
+
+  --color-accent-warm: #ffa726;
+  --color-accent-teal: #00e5cc;
+  --color-text-primary: #e8e0d4;
+  --color-text-secondary: #8a8a9a;
+  --color-text-muted: #555566;
+  --color-text-system: #00ffd5;
+
+  --color-metric-hope: #66bb6a;
+  --color-metric-fear: #42a5f5;
+  --color-metric-silence: #00ffd5;
+  --color-metric-efficiency: #ffa726;
+  --color-metric-disorder: #ff5252;
+
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Roboto Mono', 'Fira Code', monospace;
+  --font-display: 'Inter', 'Helvetica Neue', sans-serif;
+
+  --fs-xs: 0.65rem;
+  --fs-sm: 0.75rem;
+  --fs-base: 0.85rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.2rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 3rem;
+
+  /* Spacing */
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Effects */
+  --blur-panel: 20px;
+  --blur-card: 12px;
+  --border-panel: 1px solid rgba(255, 255, 255, 0.06);
+  --border-card: 1px solid rgba(255, 255, 255, 0.04);
+  --border-glow: 1px solid rgba(0, 255, 213, 0.15);
+  --shadow-panel: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(0, 255, 213, 0.1);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 600ms ease;
+  --transition-glacial: 1200ms ease;
+}
+
+/* ─── Reset ────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── App Container ────────────────────────────────────────────── */
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+#app.shake {
+  animation: camera-shake 0.4s ease-in-out;
+}
+
+/* ─── CRT & Screen FX ────────────────────────────────────────────── */
+.crt-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), 
+    linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
+  background-size: 100% 4px, 6px 100%;
+  mix-blend-mode: overlay;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes camera-shake {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-10px, 8px); }
+  20% { transform: translate(8px, -10px); }
+  30% { transform: translate(-8px, -8px); }
+  40% { transform: translate(8px, 8px); }
+  50% { transform: translate(-4px, 4px); }
+  60% { transform: translate(4px, -4px); }
+  70% { transform: translate(-4px, -4px); }
+  80% { transform: translate(4px, 4px); }
+  90% { transform: translate(-1px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ─── City View (Left 70%) ─────────────────────────────────────── */
+#city-view {
+  flex: 7;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+}
+
+#city-view canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Scanline overlay — REMOVED: shader handles this better */
+
+/* ─── System Dashboard (Right 30%) ─────────────────────────────── */
+#dashboard {
+  flex: 3;
+  min-width: 320px;
+  max-width: 420px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-panel);
+  backdrop-filter: blur(var(--blur-panel));
+  -webkit-backdrop-filter: blur(var(--blur-panel));
+  border-left: var(--border-panel);
+  box-shadow: var(--shadow-panel);
+  position: relative;
+  z-index: 10;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+#dashboard::-webkit-scrollbar {
+  width: 4px;
+}
+#dashboard::-webkit-scrollbar-track {
+  background: transparent;
+}
+#dashboard::-webkit-scrollbar-thumb {
+  background: var(--color-system-cyan-dim);
+  border-radius: 2px;
+}
+
+/* ─── Utility Classes ──────────────────────────────────────────── */
+.glass {
+  background: var(--color-bg-panel);
+  backdrop-filter: blur(var(--blur-panel));
+  -webkit-backdrop-filter: blur(var(--blur-panel));
+  border: var(--border-panel);
+  box-shadow: var(--shadow-panel);
+}
+
+.glass-card {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(var(--blur-card));
+  -webkit-backdrop-filter: blur(var(--blur-card));
+  border: var(--border-card);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
+}
+
+.glow-border {
+  border: var(--border-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+.text-cyan {
+  color: var(--color-system-cyan);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ─── Full-Screen Overlays ─────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 5, 8, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-slow);
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ─── System Grid Background ───────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 255, 213, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 213, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* ─── Selection Disabled ───────────────────────────────────────── */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}

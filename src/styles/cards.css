@@ -1,0 +1,537 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Policy Card Styles — Legal Directive aesthetic
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── Cards Container ──────────────────────────────────────────── */
+.policies-section {
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.policies-header {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: var(--space-xxs);
+}
+
+/* ─── Policy Card ──────────────────────────────────────────────── */
+.policy-card {
+  background: rgba(35, 35, 50, 0.85); /* Even brighter default background */
+  border: 1px solid rgba(0, 255, 213, 0.3); /* Fully visible default border */
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(0, 255, 213, 0.1); 
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+  opacity: 1 !important;
+}
+
+.directive-stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-redacted);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-xl);
+  text-transform: uppercase;
+  border: 4px solid var(--color-redacted);
+  padding: 8px 16px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  margin-top: -10px;
+  margin-left: -5px;
+  background: rgba(255, 32, 64, 0.05);
+  box-shadow: 0 0 20px rgba(255, 32, 64, 0.3);
+  text-shadow: 0 0 5px rgba(255, 32, 64, 0.5);
+  white-space: nowrap;
+}
+
+.policy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-system-cyan-dim) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.policy-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 255, 213, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 255, 213, 0.25), inset 0 0 16px rgba(0, 255, 213, 0.15);
+  background: rgba(45, 45, 65, 0.95);
+}
+
+.policy-card:hover::before {
+  opacity: 1;
+}
+
+.policy-card.selected {
+  border-color: var(--color-system-cyan);
+  box-shadow: 0 0 30px rgba(0, 255, 213, 0.2);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.policy-card.rejected {
+  opacity: 0.3;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+/* ─── Card Seal ────────────────────────────────────────────────── */
+.policy-seal {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid rgba(0, 255, 213, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-xs);
+  color: rgba(0, 255, 213, 0.9);
+  transition: all var(--transition-base);
+}
+
+.policy-card:hover .policy-seal {
+  border-color: var(--color-system-cyan);
+  color: var(--color-system-cyan);
+  box-shadow: 0 0 10px rgba(0, 255, 213, 0.3);
+}
+
+/* Authentication progress bar on hover */
+.policy-auth-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 255, 213, 0.1);
+  overflow: hidden;
+}
+
+.policy-auth-fill {
+  width: 0;
+  height: 100%;
+  background: var(--color-system-cyan);
+  box-shadow: 0 0 6px var(--color-system-cyan);
+  transition: width 800ms ease;
+}
+
+.policy-card:hover .policy-auth-fill {
+  width: 100%;
+}
+
+/* ─── Card Content ─────────────────────────────────────────────── */
+.policy-id {
+  font-size: var(--fs-xs);
+  color: #aeb5be;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xxs);
+  opacity: 1 !important;
+}
+
+.policy-title {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: var(--space-xs);
+  line-height: 1.3;
+  opacity: 1 !important;
+}
+
+.policy-justification {
+  font-size: var(--fs-xs);
+  color: #cfd8dc;
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+  opacity: 1 !important;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  padding-left: var(--space-xs);
+}
+
+/* ─── Effect Deltas ────────────────────────────────────────────── */
+.policy-effects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.effect-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all var(--transition-fast);
+  opacity: 1 !important;
+}
+
+.policy-card:hover .effect-chip.positive {
+  background: rgba(102, 187, 106, 0.08); /* slight green tint */
+  border-color: rgba(102, 187, 106, 0.3);
+}
+
+.policy-card:hover .effect-chip.negative {
+  background: rgba(255, 82, 82, 0.08); /* slight red tint */
+  border-color: rgba(255, 82, 82, 0.3);
+}
+
+.effect-chip.positive {
+  color: #66bb6a;
+  border-color: rgba(102, 187, 106, 0.15);
+}
+
+.effect-chip.negative {
+  color: #ff5252;
+  border-color: rgba(255, 82, 82, 0.15);
+}
+
+.effect-chip .effect-arrow {
+  font-size: 8px;
+}
+
+.effect-chip .effect-label {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.6rem;
+}
+
+.effect-chip .effect-value {
+  font-weight: 600;
+}
+
+/* ─── Continue Button ──────────────────────────────────────────── */
+.continue-btn {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  margin-top: 0;
+  background: transparent;
+  border: var(--border-glow);
+  border-radius: var(--radius-md);
+  color: var(--color-system-cyan);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.continue-btn:hover {
+  background: rgba(0, 255, 213, 0.08);
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.15);
+}
+
+.continue-btn:active {
+  transform: scale(0.98);
+}
+
+.continue-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+ * FIX 1: Processing Phase — IMPLEMENTING DIRECTIVE progress
+ * ═══════════════════════════════════════════════════════════════════ */
+
+.processing-phase {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.processing-label {
+  font-size: var(--fs-xs);
+  color: var(--color-system-cyan);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+.processing-bar {
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 255, 213, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+}
+
+.abort-btn {
+  margin-top: var(--space-md);
+  background: rgba(255, 32, 64, 0.1);
+  border: 1px solid var(--color-redacted);
+  color: var(--color-redacted);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 1px;
+}
+
+.abort-btn:hover {
+  background: rgba(255, 32, 64, 0.3);
+  box-shadow: 0 0 10px rgba(255, 32, 64, 0.5);
+}
+
+.processing-fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-system-cyan-dim), var(--color-system-cyan));
+  box-shadow: 0 0 10px rgba(0, 255, 213, 0.4);
+  border-radius: 2px;
+}
+
+.processing-title {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+ * FIX 1: Cycle Report — Delta summary after processing
+ * ═══════════════════════════════════════════════════════════════════ */
+
+.cycle-report {
+  padding: var(--space-md);
+  background: rgba(0, 255, 213, 0.03);
+  border: 1px solid rgba(0, 255, 213, 0.08);
+  border-radius: var(--radius-md);
+}
+
+.report-header {
+  font-size: var(--fs-xs);
+  color: var(--color-system-cyan);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(0, 255, 213, 0.1);
+}
+
+.redacted {
+  color: #000;
+  background-color: #000;
+  cursor: help;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.redacted:hover,
+.redacted:active {
+  color: var(--color-text-primary);
+  background-color: transparent;
+}
+
+.report-implemented {
+  font-size: var(--fs-sm);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.report-check {
+  color: var(--color-system-cyan);
+  font-size: var(--fs-md);
+}
+
+.report-deltas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+  margin-bottom: var(--space-sm);
+}
+
+.report-delta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  font-family: var(--font-mono);
+}
+
+.report-delta.positive {
+  background: rgba(102, 187, 106, 0.05);
+  color: #66bb6a;
+}
+
+.report-delta.negative {
+  background: rgba(255, 82, 82, 0.05);
+  color: #ff5252;
+}
+
+.report-metric-name {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  flex: 1;
+}
+
+.report-metric-change {
+  color: var(--color-text-secondary);
+  margin-right: var(--space-xs);
+}
+
+.report-metric-delta {
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ─── Alternative Outcome ───────────────────────────────── */
+.report-alternative {
+  margin-top: var(--space-sm);
+  padding: var(--space-sm);
+  border-left: 2px solid rgba(255, 82, 82, 0.3);
+  background: rgba(255, 82, 82, 0.03);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.report-alt-label {
+  font-size: 0.55rem;
+  color: var(--color-redacted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xxs);
+  opacity: 0.8;
+}
+
+.report-alt-text {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+ * FIX 3: Consequence Flash — ghosted over city view
+ * ═══════════════════════════════════════════════════════════════════ */
+
+.consequence-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.consequence-text {
+  max-width: 60%;
+  font-size: var(--fs-lg);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  text-shadow:
+    0 0 20px rgba(0, 255, 213, 0.2),
+    0 0 40px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-display);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+ * FIX 4: Citizen Stories — prominent recurring characters
+ * ═══════════════════════════════════════════════════════════════════ */
+
+.citizen-story {
+  padding: var(--space-sm);
+  border-left: 2px solid var(--color-accent-warm);
+  background: rgba(255, 167, 38, 0.04);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: var(--space-xs);
+  transition: all var(--transition-slow);
+}
+
+.citizen-story.gone {
+  border-left-color: var(--color-text-muted);
+  background: rgba(85, 85, 102, 0.04);
+}
+
+.citizen-story-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xxs);
+}
+
+.citizen-name {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-accent-warm);
+}
+
+.citizen-name.id-only {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.citizen-occupation {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.citizen-story-text {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.citizen-story-text.status-text {
+  font-style: normal;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+}
+
+/* Policy exhausted state */
+.policy-exhausted {
+  border: 1px dashed rgba(85, 85, 102, 0.3);
+  border-radius: var(--radius-md);
+}
+

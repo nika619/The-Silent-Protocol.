@@ -1,0 +1,51 @@
+{
+  "headlines": [
+    { "id": "h01", "text": "Council Welcomes New Optimization Framework", "conditions": { "silence_max": 20 } },
+    { "id": "h02", "text": "Citizens Report Improved Morning Commutes", "conditions": { "efficiency_min": 25 } },
+    { "id": "h03", "text": "Noise Complaints Down 30% This Quarter", "conditions": { "silence_min": 15 } },
+    { "id": "h04", "text": "Community Groups Express Cautious Optimism", "conditions": { "hope_min": 55, "silence_max": 30 } },
+    { "id": "h05", "text": "Stability Restored After Uncertain Quarter", "conditions": { "disorder_max": 35 } },
+    { "id": "h06", "text": "Evening Events See Declining Attendance", "conditions": { "silence_min": 25, "hope_max": 60 } },
+    { "id": "h07", "text": "Public Spaces Underutilized, Officials Note", "conditions": { "silence_min": 35 } },
+    { "id": "h08", "text": "Transit Efficiency Reaches Record High", "conditions": { "efficiency_min": 45 } },
+    { "id": "h09", "text": "Behavioral Compliance Exceeds Projections", "conditions": { "silence_min": 45, "disorder_max": 25 } },
+    { "id": "h10", "text": "Cultural Venues Report Zero Attendance", "conditions": { "hope_max": 35, "silence_min": 50 } },
+    { "id": "h11", "text": "City Grows Quiet — Officials Call It Progress", "conditions": { "silence_min": 55 } },
+    { "id": "h12", "text": "Citizen Movement Patterns Now Fully Predictable", "conditions": { "efficiency_min": 65 } },
+    { "id": "h13", "text": "Last Independent Media Outlet Ceases Operation", "conditions": { "silence_min": 65 } },
+    { "id": "h14", "text": "Disorder Variance Approaches Zero", "conditions": { "disorder_max": 12 } },
+    { "id": "h15", "text": "Protocol Performance: Optimal", "conditions": { "silence_min": 80 } },
+    { "id": "h16", "text": "SYS: No anomalies detected. No events scheduled.", "conditions": { "silence_min": 85 } },
+    { "id": "h17", "text": "SYS: City status — STABLE. Population status — COMPLIANT.", "conditions": { "silence_min": 90 } },
+    { "id": "h18", "text": "...", "conditions": { "silence_min": 95 } }
+  ],
+  "chatLogs": [
+    { "id": "c01", "sender": "Maya", "text": "The new transit routes are actually pretty nice. Got to work 10 minutes early!", "conditions": { "hope_min": 60 } },
+    { "id": "c02", "sender": "Ravi", "text": "I miss the night market. Does anyone know if it's coming back?", "conditions": { "hope_min": 40, "silence_min": 20 } },
+    { "id": "c03", "sender": "Citizen-1847", "text": "Is it just me or is the plaza always empty now?", "conditions": { "silence_min": 30, "hope_max": 55 } },
+    { "id": "c04", "sender": "Unknown", "text": "Careful what you say. They track keywords now.", "conditions": { "fear_min": 30 } },
+    { "id": "c05", "sender": "Citizen-2214", "text": "My son asked why the park closed. I didn't know how to explain optimization to a 6-year-old.", "conditions": { "hope_max": 45, "silence_min": 35 } },
+    { "id": "c06", "sender": "Citizen-0891", "text": "It is easier now. At least nothing surprises us.", "conditions": { "hope_max": 35, "silence_min": 45 } },
+    { "id": "c07", "sender": "Citizen-3310", "text": "I miss when the plaza was crowded. I miss noise.", "conditions": { "silence_min": 50, "hope_max": 30 } },
+    { "id": "c08", "sender": "Citizen-4490", "text": "I reported my neighbor today. I'm not sure why. It felt like the right thing to do.", "conditions": { "fear_min": 50, "silence_min": 50 } },
+    { "id": "c09", "sender": "ID-5521", "text": "Permission to speak freely? ... Never mind.", "conditions": { "silence_min": 65, "fear_min": 40 } },
+    { "id": "c10", "sender": "ID-2288", "text": "I can't remember the last time I laughed.", "conditions": { "hope_max": 20, "silence_min": 60 } },
+    { "id": "c11", "sender": "ID-7740", "text": "My daughter doesn't sing anymore. She says it draws attention.", "conditions": { "fear_min": 55, "silence_min": 65 } },
+    { "id": "c12", "sender": "ID-0012", "text": "[Message review pending — content flagged for emotional variance]", "conditions": { "silence_min": 75 } },
+    { "id": "c13", "sender": "SYSTEM", "text": "Citizen chat activity: 2 messages today. Compliance: ACCEPTABLE.", "conditions": { "silence_min": 80 } },
+    { "id": "c14", "sender": "SYSTEM", "text": "No citizen communications logged in 48 hours.", "conditions": { "silence_min": 90 } }
+  ],
+  "systemAlerts": [
+    { "id": "s01", "text": "Optimization framework installed. Initial calibration in progress.", "conditions": { "cycleMin": 1, "cycleMax": 1 } },
+    { "id": "s02", "text": "Noise reduction targets achieved ahead of schedule.", "conditions": { "silence_min": 20 } },
+    { "id": "s03", "text": "Social clustering patterns show 15% reduction. Within acceptable parameters.", "conditions": { "silence_min": 30 } },
+    { "id": "s04", "text": "Citizen satisfaction surveys discontinued — insufficient response rate.", "conditions": { "hope_max": 45 } },
+    { "id": "s05", "text": "Emotional variance reduced within acceptable parameters.", "conditions": { "silence_min": 50 } },
+    { "id": "s06", "text": "Citizen designation system activated. Names deprecated in favor of ID codes.", "conditions": { "silence_min": 55 } },
+    { "id": "s07", "text": "Non-essential cultural facilities flagged for decommission.", "conditions": { "silence_min": 60, "efficiency_min": 60 } },
+    { "id": "s08", "text": "Disorder variance approaching statistical zero. System objectives 86% achieved.", "conditions": { "disorder_max": 15 } },
+    { "id": "s09", "text": "Population emotional baseline: UNIFORM. Deviation events: 0 this cycle.", "conditions": { "silence_min": 75 } },
+    { "id": "s10", "text": "City vitality index deprecated — metric no longer relevant to system objectives.", "conditions": { "silence_min": 85 } },
+    { "id": "s11", "text": "All system objectives achieved. The city is optimized.", "conditions": { "silence_min": 95 } }
+  ]
+}

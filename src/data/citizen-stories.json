@@ -1,0 +1,152 @@
+{
+  "citizens": [
+    {
+      "id": "maya",
+      "name": "Maya",
+      "occupation": "Street musician",
+      "messages": [
+        {
+          "cycle": 1,
+          "text": "Played guitar in the plaza tonight. Old couple stopped to dance. These are the moments that make the city real.",
+          "conditions": {}
+        },
+        {
+          "cycle": 3,
+          "text": "They asked me to move from my usual corner. 'Noise optimization.' I found another spot. It's fine. Probably.",
+          "conditions": { "silence_min": 10 }
+        },
+        {
+          "cycle": 5,
+          "text": "Fewer people stop now. They walk faster. Eyes forward. My tip jar's been empty two days running.",
+          "conditions": { "fear_min": 25 }
+        },
+        {
+          "cycle": 8,
+          "text": "Haven't played in a week. It's not that I'm forbidden. It just... doesn't feel right anymore. Like the quiet wants me to match it.",
+          "conditions": {}
+        },
+        {
+          "cycle": 10,
+          "text": "Sold my guitar. No one was listening anyway.",
+          "conditions": { "hope_max": 40 }
+        },
+        {
+          "cycle": 13,
+          "text": "...",
+          "conditions": {}
+        }
+      ]
+    },
+    {
+      "id": "ravi",
+      "name": "Ravi",
+      "occupation": "Cafe owner",
+      "messages": [
+        {
+          "cycle": 1,
+          "text": "Best morning rush in months! Chai is flowing, regulars are arguing about football. This is what a city sounds like.",
+          "conditions": {}
+        },
+        {
+          "cycle": 3,
+          "text": "New quiet hours mean I close earlier. Lost the late-night study crowd. Budget's tighter this month.",
+          "conditions": { "silence_min": 15 }
+        },
+        {
+          "cycle": 6,
+          "text": "Most of my tables are empty now. People don't linger. They order, drink, leave. No one stays to talk.",
+          "conditions": {}
+        },
+        {
+          "cycle": 9,
+          "text": "Got my 'non-productive space assessment' today. Apparently cafes don't contribute to efficiency metrics. Who writes this?",
+          "conditions": {}
+        },
+        {
+          "cycle": 11,
+          "text": "Closing the cafe. Not because I was told to. Because there's no one left to serve.",
+          "conditions": { "hope_max": 20 }
+        },
+        {
+          "cycle": 14,
+          "text": "[CITIZEN RELOCATED — NO FORWARDING ADDRESS]",
+          "conditions": {}
+        }
+      ]
+    },
+    {
+      "id": "noor",
+      "name": "Noor",
+      "occupation": "Teacher",
+      "messages": [
+        {
+          "cycle": 2,
+          "text": "Kids wrote poems about their neighborhood today. Amir's was about his grandfather's bakery. Made me cry.",
+          "conditions": {}
+        },
+        {
+          "cycle": 4,
+          "text": "New curriculum guidelines arrived. 'Creative subjects reallocated to technical skills.' I'm keeping poetry Fridays anyway.",
+          "conditions": {}
+        },
+        {
+          "cycle": 6,
+          "text": "Poetry Fridays got flagged in my performance review. 'Non-aligned with efficiency standards.' Since when is wonder inefficient?",
+          "conditions": {}
+        },
+        {
+          "cycle": 9,
+          "text": "The children don't ask 'why' anymore. They ask 'what's the correct answer.' I taught them that. I'm part of this.",
+          "conditions": {}
+        },
+        {
+          "cycle": 12,
+          "text": "Amir's grandfather's bakery closed last month. Amir wrote a report about it. Factual. Efficient. No feeling at all.",
+          "conditions": {}
+        },
+        {
+          "cycle": 14,
+          "text": "[EMPLOYMENT STATUS: AUTOMATED]",
+          "conditions": {}
+        }
+      ]
+    },
+    {
+      "id": "felix",
+      "name": "Felix",
+      "occupation": "Night security",
+      "messages": [
+        {
+          "cycle": 2,
+          "text": "Quiet shift tonight. Couple having a picnic on the roof. Pretended I didn't see them. Some rules are meant to be ignored.",
+          "conditions": {}
+        },
+        {
+          "cycle": 4,
+          "text": "They installed sensors in my sector. The system sees everything now. Doesn't matter what I pretend not to notice.",
+          "conditions": {}
+        },
+        {
+          "cycle": 7,
+          "text": "Filed 23 anomaly reports this week. Mostly people walking too slowly or standing too long in one place. Is that a crime now?",
+          "conditions": {}
+        },
+        {
+          "cycle": 10,
+          "text": "I'm not security anymore. I'm a compliance officer. Different badge. Same hallways. But now I'm the thing people are afraid of.",
+          "conditions": {}
+        },
+        {
+          "cycle": 12,
+          "text": "The rooftop couple from before. Saw their names on a deviation report today. I flagged them. I flagged them and I didn't even hesitate.",
+          "conditions": { "efficiency_min": 60, "fear_min": 40 }
+        },
+        {
+          "cycle": 15,
+          "text": "[STATUS: COMPLIANT]",
+          "conditions": {}
+        }
+      ]
+    }
+  ]
+}

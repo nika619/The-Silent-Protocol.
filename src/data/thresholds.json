@@ -1,0 +1,109 @@
+{
+  "thresholds": [
+    {
+      "id": "first_silence",
+      "metric": "silence",
+      "value": 20,
+      "direction": "above",
+      "event": "visual",
+      "description": "Ambient particle warmth begins to cool",
+      "narrativeId": "s02"
+    },
+    {
+      "id": "hope_concerned",
+      "metric": "hope",
+      "value": 60,
+      "direction": "below",
+      "event": "citizen",
+      "description": "Citizens begin showing anxious state"
+    },
+    {
+      "id": "silence_moderate",
+      "metric": "silence",
+      "value": 35,
+      "direction": "above",
+      "event": "visual",
+      "description": "First city props begin disappearing, desaturation noticeable"
+    },
+    {
+      "id": "fear_uneasy",
+      "metric": "fear",
+      "value": 30,
+      "direction": "above",
+      "event": "audio",
+      "description": "Music melody stem begins fading"
+    },
+    {
+      "id": "hope_declining",
+      "metric": "hope",
+      "value": 40,
+      "direction": "below",
+      "event": "ui",
+      "description": "Dashboard labels begin simplifying"
+    },
+    {
+      "id": "silence_heavy",
+      "metric": "silence",
+      "value": 50,
+      "direction": "above",
+      "event": "visual",
+      "description": "Major desaturation, most warm lighting gone"
+    },
+    {
+      "id": "disorder_low",
+      "metric": "disorder",
+      "value": 20,
+      "direction": "below",
+      "event": "narrative",
+      "description": "System celebrates low disorder"
+    },
+    {
+      "id": "silence_extreme",
+      "metric": "silence",
+      "value": 65,
+      "direction": "above",
+      "event": "audio",
+      "description": "Most ambient sounds gone, only mechanical hums remain"
+    },
+    {
+      "id": "hope_critical",
+      "metric": "hope",
+      "value": 20,
+      "direction": "below",
+      "event": "visual",
+      "description": "City feels abandoned, minimal citizens"
+    },
+    {
+      "id": "fear_oppressive",
+      "metric": "fear",
+      "value": 60,
+      "direction": "above",
+      "event": "visual",
+      "description": "Harsh shadows, vignette intensifies"
+    },
+    {
+      "id": "silence_near_total",
+      "metric": "silence",
+      "value": 80,
+      "direction": "above",
+      "event": "ui",
+      "description": "UI enters monochrome state, glitch effects begin"
+    },
+    {
+      "id": "silence_climax",
+      "metric": "silence",
+      "value": 95,
+      "direction": "above",
+      "event": "audio",
+      "description": "Near-total silence, only faint system hum"
+    },
+    {
+      "id": "efficiency_peak",
+      "metric": "efficiency",
+      "value": 90,
+      "direction": "above",
+      "event": "narrative",
+      "description": "System declares total optimization"
+    }
+  ]
+}
