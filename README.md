@@ -12,6 +12,12 @@
   <img src="./src/assets/screenshot.png" alt="System Interface Screenshot" width="100%">
 </p>
 
+### Gameplay View
+
+<p align="center">
+  <img src="./src/assets/gameplay.png" alt="System Gameplay Screenshot" width="100%">
+</p>
+
 **The Silent Protocol** is a systemic narrative game. You play as an Autonomous City Optimization System tasked with managing a sprawling, chaotic metropolis. Through the implementation of authoritative directives and policy choices, your objective is to bring "order" to the populace by meticulously reducing their hope and increasing their fear—until perfectly controlled silence is achieved.
 
 ---
