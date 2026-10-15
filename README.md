@@ -1,5 +1,7 @@
 # ◈ The Silent Protocol
 
+[![CI](https://github.com/nika619/The-Silent-Protocol./actions/workflows/ci.yml/badge.svg)](https://github.com/nika619/The-Silent-Protocol./actions/workflows/ci.yml)
+
 > **"You are not a villain. You are the system. Optimize the city through cold logic and watch as silence becomes your greatest achievement."**
 
 <p align="center">
