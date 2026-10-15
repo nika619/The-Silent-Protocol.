@@ -90,3 +90,8 @@ npm run preview
 ## 🎖️ Credits
 
 *"Optimizing chaos since initialization."*
+
+
+---
+
+Built by [Mayank Tiwari](https://github.com/nika619) · [Hire me on Contra](https://contra.com/mayank_tiwari_a4vkcjsh)
